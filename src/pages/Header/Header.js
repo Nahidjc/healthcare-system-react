@@ -1,5 +1,5 @@
 import React from "react";
-
+import logo from "./log.png";
 const Header = () => {
   return (
     <div>
@@ -17,14 +17,12 @@ const Header = () => {
             <i className="fas fa-bars"></i>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className="collapse navbar-collapse container"
+            id="navbarSupportedContent"
+          >
             <a className="navbar-brand mt-2 mt-lg-0" href="#">
-              <img
-                src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
-                height="15"
-                alt=""
-                loading="lazy"
-              />
+              <img src={logo} height="25" alt="" loading="lazy" />
             </a>
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -66,7 +64,7 @@ const Header = () => {
             </ul>
           </div>
 
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center ">
             <a
               className="dropdown-toggle d-flex align-items-center hidden-arrow"
               href="#"
