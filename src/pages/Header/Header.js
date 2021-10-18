@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "./log.png";
+import useAuth from "./../../hooks/useAuth";
 const Header = () => {
+  const { user } = useAuth();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
