@@ -1,18 +1,28 @@
 import React from "react";
+import useAuth from "./../../hooks/useAuth";
 
 const Login = () => {
+  const { signInUsingGoogle, user } = useAuth();
   return (
-    <div className="p-5 shadow">
+    <div className="p-5 shadow m-auto my-5" style={{ width: "25%" }}>
       <form>
         <div className="form-outline mb-4">
-          <input type="email" id="form2Example1" className="form-control" />
+          <input
+            type="email"
+            id="form2Example1"
+            className="form-control border"
+          />
           <label className="form-label" for="form2Example1">
             Email address
           </label>
         </div>
 
         <div className="form-outline mb-4">
-          <input type="password" id="form2Example2" className="form-control" />
+          <input
+            type="password"
+            id="form2Example2"
+            className="border form-control"
+          />
           <label className="form-label" for="form2Example2">
             Password
           </label>
@@ -53,7 +63,11 @@ const Login = () => {
             <i className="fab fa-facebook-f"></i>
           </button>
 
-          <button type="button" className="btn btn-primary btn-floating mx-1">
+          <button
+            type="button"
+            onClick={signInUsingGoogle}
+            className="btn btn-primary btn-floating mx-1"
+          >
             <i className="fab fa-google"></i>
           </button>
 

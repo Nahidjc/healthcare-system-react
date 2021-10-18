@@ -2,7 +2,9 @@ import React from "react";
 import logo from "./log.png";
 import useAuth from "./../../hooks/useAuth";
 const Header = () => {
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
+  console.log(user);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -76,7 +78,7 @@ const Header = () => {
               aria-expanded="false"
             >
               <img
-                src="https://mdbootstrap.com/img/new/avatars/2.jpg"
+                src={user.photoURL}
                 className="rounded-circle"
                 height="25"
                 alt=""
