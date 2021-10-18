@@ -1,0 +1,15 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #eee;
+  height: inherit;
+  margin: 0;
+}
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}

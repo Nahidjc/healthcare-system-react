@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useAuth from "./../../hooks/useAuth";
 
 const Login = () => {
   const { signInUsingGoogle, user } = useAuth();
   return (
     <div className="p-5 shadow m-auto my-5" style={{ width: "25%" }}>
+      <h3 className="text-center">Please Login</h3>
       <form>
         <div className="form-outline mb-4">
           <input
@@ -56,7 +58,7 @@ const Login = () => {
 
         <div className="text-center">
           <p>
-            Not a member? <a href="#!">Register</a>
+            Not a member? <Link to="/register">Register</Link>
           </p>
           <p>or sign up with:</p>
           <button type="button" className="btn btn-primary btn-floating mx-1">

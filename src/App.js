@@ -5,6 +5,7 @@ import Contact from "./pages/Contact/Contact";
 import Carosel from "./pages/Header/Carosel";
 import Header from "./pages/Header/Header";
 import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 import Services from "./Services/Services";
 
 function App() {
@@ -16,6 +17,21 @@ function App() {
           <Switch>
             <Route exact path="/login">
               <Login></Login>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/register">
+              <Signup></Signup>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/contact">
+              <Contact></Contact>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/services">
+              <Services></Services>
             </Route>
           </Switch>
           <Switch>
