@@ -14,7 +14,7 @@ const Login = () => {
             id="form2Example1"
             className="form-control border"
           />
-          <label className="form-label" for="form2Example1">
+          <label className="form-label" htmlFor="form2Example1">
             Email address
           </label>
         </div>
@@ -25,7 +25,7 @@ const Login = () => {
             id="form2Example2"
             className="border form-control"
           />
-          <label className="form-label" for="form2Example2">
+          <label className="form-label" htmlFor="form2Example2">
             Password
           </label>
         </div>
@@ -40,7 +40,7 @@ const Login = () => {
                 id="form2Example34"
                 checked
               />
-              <label className="form-check-label" for="form2Example34">
+              <label className="form-check-label" htmlFor="form2Example34">
                 {" "}
                 Remember me{" "}
               </label>

@@ -10,7 +10,7 @@ const Contact = () => {
             id="form4Example1"
             className="form-control border"
           />
-          <label className="form-label" for="form4Example1">
+          <label className="form-label" htmlFor="form4Example1">
             Name
           </label>
         </div>
@@ -21,7 +21,7 @@ const Contact = () => {
             id="form4Example2"
             className="border form-control"
           />
-          <label className="form-label" for="form4Example2">
+          <label className="form-label" htmlFor="form4Example2">
             Email address
           </label>
         </div>
@@ -32,7 +32,7 @@ const Contact = () => {
             id="form4Example3"
             rows="4"
           ></textarea>
-          <label className="form-label" for="form4Example3">
+          <label className="form-label" htmlFor="form4Example3">
             Message
           </label>
         </div>
@@ -44,7 +44,7 @@ const Contact = () => {
             value=""
             id="form4Example4"
           />
-          <label className="form-check-label" for="form4Example4">
+          <label className="form-check-label" htmlFor="form4Example4">
             Send me a copy of this message
           </label>
         </div>

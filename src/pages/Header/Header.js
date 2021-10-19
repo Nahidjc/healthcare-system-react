@@ -72,45 +72,29 @@ const Header = () => {
 
           {user.email ? (
             <div className="d-flex align-items-center ">
-              <ul className="my-auto">
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    {user.email}
+                  </a>
+                </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
                     {user.displayName}
                   </a>
                 </li>
-              </ul>
 
-              <a
-                className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src={user.photoURL}
-                  className="rounded-circle"
-                  height="25"
-                  alt=""
-                  loading="lazy"
-                />
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">
-                    My profile
-                  </a>
+                <li className="nav-item my-auto">
+                  <img
+                    src={user.photoURL}
+                    className="rounded-circle my-auto"
+                    height="25"
+                    alt=""
+                    loading="lazy"
+                  />
                 </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Settings
-                  </a>
-                </li>
-                <li>
+
+                <li className="nav-item">
                   <a onClick={logOut} className="dropdown-item" href="#">
                     Logout
                   </a>
@@ -119,7 +103,7 @@ const Header = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button class="btn btn-primary ">Login</button>
+              <button className="btn btn-primary ">Login</button>
             </Link>
           )}
         </div>
