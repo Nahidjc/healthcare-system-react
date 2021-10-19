@@ -9,15 +9,18 @@ import {
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "./../Firebase/firebase.initialize";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 initializeAuthentication();
 
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
   const auth = getAuth();
+  const notify = (erro) => toast.error(erro);
   const googleProvider = new GoogleAuthProvider();
-
+  const errorComponent = <ToastContainer />;
   // Popup login system
   const signInUsingGoogle = () => {
     setIsLoading(true);
@@ -25,6 +28,11 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+        notify(error.message);
       })
       .finally(() => setIsLoading(false));
   };
@@ -35,6 +43,11 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+        notify(error.message);
       })
       .finally(() => setIsLoading(false));
   };
@@ -45,6 +58,11 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+        notify(error.message);
       })
       .finally(() => setIsLoading(false));
   };
@@ -74,7 +92,9 @@ const useFirebase = () => {
     SigninUsingEmail,
     SignupUsingEmail,
     logOut,
+    errorComponent,
     isLoading,
+    error,
   };
 };
 

@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "./../../hooks/useAuth";
 
 const Login = () => {
-  const { signInUsingGoogle, user } = useAuth();
+  const { signInUsingGoogle, SigninUsingEmail, user, error, errorComponent } =
+    useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    SigninUsingEmail(email, password);
+  };
   return (
     <div className="p-5 shadow m-auto my-5" style={{ width: "25%" }}>
       <h3 className="text-center">Please Login</h3>
-      <form>
+      {errorComponent}
+      <form onSubmit={handleSubmitForm}>
         <div className="form-outline mb-4">
           <input
             type="email"
             id="form2Example1"
             className="form-control border"
+            onBlur={handleEmail}
           />
           <label className="form-label" htmlFor="form2Example1">
             Email address
@@ -23,6 +40,7 @@ const Login = () => {
           <input
             type="password"
             id="form2Example2"
+            onBlur={handlePassword}
             className="border form-control"
           />
           <label className="form-label" htmlFor="form2Example2">
