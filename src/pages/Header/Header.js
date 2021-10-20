@@ -78,7 +78,7 @@ const Header = () => {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    {user.displayName}
+                    {user?.displayName}
                   </a>
                 </li>
 

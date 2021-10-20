@@ -3,8 +3,13 @@ import useAuth from "../../hooks/useAuth";
 
 const Signup = () => {
   const { signInUsingGoogle, SignupUsingEmail } = useAuth();
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -15,7 +20,7 @@ const Signup = () => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    SignupUsingEmail(email, password);
+    SignupUsingEmail(email, password, username);
   };
 
   const signInGoogleFunction = () => {
@@ -23,7 +28,7 @@ const Signup = () => {
   };
   return (
     <div className="row">
-      <div className="p-5 shadow m-auto my-5 col-md-3 col-sm-6 col-xs-6">
+      <div className="p-5 shadow m-auto my-5 col-lg-4 col-md-6 col-sm-8 col-xs-10">
         <h3 className="text-center">Please Register</h3>
         <form onSubmit={handleSubmitForm}>
           <div className="row mb-4">
@@ -53,6 +58,14 @@ const Signup = () => {
             </div>
           </div>
 
+          <div className="form-outline mb-4">
+            <input
+              type="text"
+              onBlur={handleUsername}
+              className="border form-control"
+            />
+            <label className="form-label">Username</label>
+          </div>
           <div className="form-outline mb-4">
             <input
               type="email"

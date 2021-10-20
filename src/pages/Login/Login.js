@@ -63,7 +63,6 @@ const Login = () => {
                 type="checkbox"
                 value=""
                 id="form2Example34"
-                checked
               />
               <label className="form-check-label" htmlFor="form2Example34">
                 {" "}

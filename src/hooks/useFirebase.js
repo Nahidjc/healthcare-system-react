@@ -2,6 +2,7 @@ import {
   getAuth,
   signInWithPopup,
   signOut,
+  updateProfile,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
@@ -37,11 +38,13 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-  const SignupUsingEmail = (email, password) => {
+  const SignupUsingEmail = (email, password, username) => {
+    console.log(email, password, username);
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const user = result.user;
+        setUserName();
         setUser(user);
         setError("");
       })
@@ -50,6 +53,10 @@ const useFirebase = () => {
         notify(error.message);
       })
       .finally(() => setIsLoading(false));
+
+    const setUserName = () => {
+      updateProfile(auth.currentUser, { displayName: username }).then(() => {});
+    };
   };
 
   const SigninUsingEmail = (email, password) => {
