@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 
 const Signup = () => {
-  const { signInUsingGoogle, SignupUsingEmail, user } = useAuth();
+  const { signInUsingGoogle, SignupUsingEmail } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,6 +16,10 @@ const Signup = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     SignupUsingEmail(email, password);
+  };
+
+  const signInGoogleFunction = () => {
+    signInUsingGoogle();
   };
   return (
     <div className="row">
@@ -107,7 +111,7 @@ const Signup = () => {
 
             <button
               type="button"
-              onClick={signInUsingGoogle}
+              onClick={signInGoogleFunction}
               className="btn btn-primary btn-floating mx-1"
             >
               <i className="fab fa-google"></i>

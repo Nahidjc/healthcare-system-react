@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 import useAuth from "./../../hooks/useAuth";
 
 const Login = () => {
-  const { signInUsingGoogle, SigninUsingEmail, user, error, errorComponent } =
-    useAuth();
+  const { signInUsingGoogle, SigninUsingEmail, errorComponent } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const location = useLocation();
+  const location_url = location.state?.from || "/";
+  const history = useHistory();
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -18,6 +19,12 @@ const Login = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     SigninUsingEmail(email, password);
+    history.push(location_url);
+  };
+
+  const GoogleSignInFunction = () => {
+    signInUsingGoogle();
+    history.push(location_url);
   };
   return (
     <div className="p-5 shadow m-auto my-5" style={{ width: "25%" }}>
@@ -85,7 +92,7 @@ const Login = () => {
 
           <button
             type="button"
-            onClick={signInUsingGoogle}
+            onClick={GoogleSignInFunction}
             className="btn btn-primary btn-floating mx-1"
           >
             <i className="fab fa-google"></i>
