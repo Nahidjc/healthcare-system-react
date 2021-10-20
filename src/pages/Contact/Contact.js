@@ -3,9 +3,15 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import StaticDateTimePicker from "@mui/lab/StaticDateTimePicker";
+import { useHistory } from "react-router-dom";
 
 const Contact = () => {
   const [value, setValue] = React.useState(new Date());
+  const history = useHistory();
+
+  const AppointmentForm = () => {
+    history.push("/");
+  };
   return (
     <div className="row mt-5">
       <div className="col-md-8 mx-auto">
@@ -27,7 +33,7 @@ const Contact = () => {
           </div>
           <div className="col-md-5 ">
             <div className="p-5 shadow ">
-              <form>
+              <form onSubmit={AppointmentForm}>
                 <div className="form-outline mb-4">
                   <input
                     type="text"
@@ -49,6 +55,16 @@ const Contact = () => {
                     Email address
                   </label>
                 </div>
+                <div className="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="form4Example2"
+                    className="border form-control"
+                  />
+                  <label className="form-label" htmlFor="form4Example2">
+                    Phone
+                  </label>
+                </div>
 
                 <div className="form-outline mb-4">
                   <textarea
@@ -57,7 +73,7 @@ const Contact = () => {
                     rows="4"
                   ></textarea>
                   <label className="form-label" htmlFor="form4Example3">
-                    Message
+                    Describe your self
                   </label>
                 </div>
 

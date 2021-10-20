@@ -11,6 +11,7 @@ import Services from "./Services/Services";
 import DetailsService from "./pages/DetailsService/DetailsService";
 import NotFound from "./pages/NotFound/NotFound";
 import Doctors from "./Doctors/Doctors";
+import Footer from "./pages/Footer/Footer";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>
