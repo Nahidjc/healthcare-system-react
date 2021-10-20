@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Service = (props) => {
-  console.log(props);
   const { id, desc, picture, name } = props.service;
+
   return (
     <div className="col-md-4 my-4">
       <div className="card" style={{ height: "450px" }}>
@@ -21,7 +22,7 @@ const Service = (props) => {
           <p className="card-text">{desc.slice(0, 200) + "...."}</p>
           <div className="d-flex justify-content-between">
             <button className="btn btn-primary">Appoinment</button>
-            <p>More Details</p>
+            <Link to={`/service-details/${id}`}>More Details</Link>
           </div>
         </div>
       </div>

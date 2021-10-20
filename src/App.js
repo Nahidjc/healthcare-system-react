@@ -6,7 +6,10 @@ import Carosel from "./pages/Header/Carosel";
 import Header from "./pages/Header/Header";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Services from "./Services/Services";
+import DetailsService from "./pages/DetailsService/DetailsService";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -15,30 +18,33 @@ function App() {
         <BrowserRouter>
           <Header></Header>
           <Switch>
-            <Route exact path="/login">
-              <Login></Login>
-            </Route>
-          </Switch>
-          <Switch>
-            <Route exact path="/register">
-              <Signup></Signup>
-            </Route>
-          </Switch>
-          <Switch>
-            <Route exact path="/contact">
-              <Contact></Contact>
-            </Route>
-          </Switch>
-          <Switch>
-            <Route exact path="/services">
-              <Services></Services>
-            </Route>
-          </Switch>
-          <Switch>
             <Route exact path="/">
               <Carosel></Carosel>
               <Services></Services>
               <Contact></Contact>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+
+            <Route path="/register">
+              <Signup></Signup>
+            </Route>
+
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
+
+            <Route path="/services">
+              <Services></Services>
+            </Route>
+
+            <Route path="/service-details/:id">
+              <DetailsService></DetailsService>
+            </Route>
+
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </BrowserRouter>
