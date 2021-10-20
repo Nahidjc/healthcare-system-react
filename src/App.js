@@ -21,12 +21,13 @@ function App() {
             <Route exact path="/">
               <Carosel></Carosel>
               <Services></Services>
-              <Contact></Contact>
             </Route>
             <Route path="/login">
               <Login></Login>
             </Route>
-
+            <PrivateRoute path="/appoinment">
+              <Contact></Contact>
+            </PrivateRoute>
             <Route path="/register">
               <Signup></Signup>
             </Route>

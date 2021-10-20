@@ -21,7 +21,10 @@ const Service = (props) => {
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{desc.slice(0, 200) + "...."}</p>
           <div className="d-flex justify-content-between">
-            <button className="btn btn-primary">Appoinment</button>
+            <Link to="/appoinment">
+              <button className="btn btn-primary">Appoinment</button>
+            </Link>
+
             <Link to={`/service-details/${id}`}>More Details</Link>
           </div>
         </div>
