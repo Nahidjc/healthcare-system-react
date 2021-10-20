@@ -9,6 +9,7 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 const Doctor = (props) => {
   console.log(props.doctor);
   const { name, desc, img } = props.doctor;
@@ -36,7 +37,9 @@ const Doctor = (props) => {
               <p className="text-center"> {desc}</p>
             </MDBCardText>
             <MDBCol md="12" className="d-flex justify-content-center">
-              <Button variant="contained">Appoinment</Button>
+              <Link to="/contact">
+                <Button variant="contained">Appoinment</Button>
+              </Link>
             </MDBCol>
           </MDBCardBody>
         </div>
