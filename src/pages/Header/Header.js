@@ -41,9 +41,7 @@ const Header = () => {
                 <Link to="/services">Services</Link>
               </li>
               <li className="nav-item my-auto">
-                <a className="nav-link" href="#">
-                  Doctors
-                </a>
+                <Link to="/doctors">Doctors</Link>
               </li>
               <li className="nav-item my-auto">
                 <a className="nav-link" href="#">
@@ -51,19 +49,12 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item my-auto">
-                <a className="nav-link" href="#">
-                  Appoinment
-                </a>
+                <Link to="/appoinment">Appoinment</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">
                   About
                 </a>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="contact">
-                  Contact
-                </Link>
               </li>
             </ul>
           </div>

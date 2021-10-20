@@ -23,7 +23,7 @@ const DetailsService = () => {
   console.log(service);
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/Nahidjc/healthcare-system-react/master/public/serviceData.json?token=AMBJZNJJWDO3IZZYAO3H26LBOALCI"
+      "https://raw.githubusercontent.com/Nahidjc/json_Data/main/serviceData.json"
     )
       .then((res) => res.json())
       .then((data) => {

@@ -7,7 +7,9 @@ const Services = () => {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch("./serviceData.json")
+    fetch(
+      "https://raw.githubusercontent.com/Nahidjc/json_Data/main/serviceData.json"
+    )
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

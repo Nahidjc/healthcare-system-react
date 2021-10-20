@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import Services from "./Services/Services";
 import DetailsService from "./pages/DetailsService/DetailsService";
 import NotFound from "./pages/NotFound/NotFound";
+import Doctors from "./Doctors/Doctors";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/">
               <Carosel></Carosel>
               <Services></Services>
+              <Doctors></Doctors>
             </Route>
             <Route path="/login">
               <Login></Login>
@@ -35,7 +37,9 @@ function App() {
             <Route path="/contact">
               <Contact></Contact>
             </Route>
-
+            <Route path="/doctors">
+              <Doctors></Doctors>
+            </Route>
             <Route path="/services">
               <Services></Services>
             </Route>
